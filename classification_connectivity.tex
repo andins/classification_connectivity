@@ -34,7 +34,7 @@
 \vspace*{2cm}
 
 %{ \Large {\bf The metacognitive filter}}
-{ \Large {\bf Classification of connectivity data.} 
+{ \Large {\bf Classification of connectivity data.} \\
 Comparison of classifiers and dimensionality reduction techniques.}
 
 
@@ -83,7 +83,7 @@ Running title: Classification of connectivity data.\\
 %\linenumbers
 \doublespacing
 \begin{abstract}
-
+This is the abstract.
 \end{abstract}
 
 \newpage
@@ -101,23 +101,37 @@ Running title: Classification of connectivity data.\\
 \label{results}
 
 \subsection{Importance of large test-set to assess generalization performance}
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[width=0.89\columnwidth]{variability_finn_1nn_violins_hues}
+  \caption[Variability of generalization score]{Distribution of test-set generalization score for large and small test set size.
+	  \label{fig:variability_score}}
+\end{center}
+\end{figure}
 
 \subsection{Comparison of classification pipelines for subjects' identity classification}
 \subsubsection{z-score}
 \subsubsection{PCA}
 \subsubsection{Different classifiers}
 
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[width=0.89\columnwidth]{comparison_clf_subj_moviedata}
+  \caption[Comparison of classifiers]{Comparison of classifiers.
+	  \label{fig:clf_comp}}
+\end{center}
+\end{figure}
 \subsection{Feature selection}
 \subsubsection{Information filters}
 \subsubsection{Randomized Lasso}
 \subsubsection{Recursive feature elimination}
 
 \subsection{Probabilistic class assignment and confidence as graded diagnostics measures}
-\begin{figure}[b]
+\begin{figure}[!htb]
 \begin{center}
-\includegraphics[width=0.89\columnwidth]{}
-  \caption[Comparison of classifiers]{Comparison of classifiers.
-	  \label{fig:clf_comp}}
+\includegraphics[width=0.89\columnwidth]{proba_samples_two_features}
+  \caption[Probability of class assignment]{Probability of class assignment.
+	  \label{fig:probabilistic}}
 \end{center}
 \end{figure}
 
