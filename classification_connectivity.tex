@@ -122,6 +122,8 @@ Here we show the distribution of generalization score as a function of the numbe
 \end{center}
 \end{figure}
 
+\subsection{Comparison of connectivity classification with BOLD time series classification}
+
 \subsection{Comparison of classification pipelines for subjects' identity classification}
 \subsubsection{z-score}
 \subsubsection{PCA}
@@ -135,7 +137,19 @@ Here we show the distribution of generalization score as a function of the numbe
 \end{center}
 \end{figure}
 \subsection{Trade-off between number of samples and signal length}
-\subsection{Feature selection}
+\subsection{Feature selection with $p>n$}
+When $p>n$ the data live in subspace of dimensionality $n$ then there is an infinite number of solution to the classification
+problem. As a consequence the estimated parameters of the classifier might have very high variance depending on the actual
+datapoints present in the training set (this could be shown with LOOCV: each fold should produce very similar estimates, so
+if the coefficients estimated on each fold are very variable, this means that just one sample has a huge impact; it might be enough to look
+at the variability of the feature estimated as least important, $min \beta$).
+Then feature selection might be meaningless in this case. This could be tested using a synthetic dataset with $p>n$ build such that we know
+the importance of each feature (scikit-learn should have a routine to do it); then apply the feature selection method and see how much bias
+and variance it has. Compare this to the $n\ge p$ case (varying $n$). Hypothesis: increasing $n$ should decrease variance.
+Finally test feature selection method on PCA transformed data ($p>n$), this should ameliorate the variance of the ranking. Possibly find a nice
+way to interpret PCs.
+
+\subsection{Feature selection methods comparison}
 \subsubsection{Information filters}
 \subsubsection{Randomized Lasso}
 \subsubsection{Regularized Random Forest}
